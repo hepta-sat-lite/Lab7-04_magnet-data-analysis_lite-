@@ -11,14 +11,6 @@ df.columns = ['time', 'battery_voltage', 'temperature',
               'gyro_x', 'gyro_y', 'gyro_z', 
               'mag_x', 'mag_y', 'mag_z']
 
-# 時間データの変換（例: Unix秒の場合）
-df['time'] = pd.to_datetime(df['time'], unit='s')
-
-# 地磁気の各軸を数値に変換
-df['mag_x'] = pd.to_numeric(df['mag_x'], errors='coerce')
-df['mag_y'] = pd.to_numeric(df['mag_y'], errors='coerce')
-df['mag_z'] = pd.to_numeric(df['mag_z'], errors='coerce')
-
 # 2×2グリッドでサブプロット作成
 fig, axes = plt.subplots(2, 2, figsize=(15, 10))
 
