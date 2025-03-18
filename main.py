@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # ファイルの読み込み
-filename = ''  #ファイルのパスをコピー
+filename = ''  
 df = pd.read_csv(filename, header=None, sep=',')
 
 # 列名の設定
@@ -11,6 +11,7 @@ df.columns = ['time', 'battery_voltage', 'temperature',
               'gyro_x', 'gyro_y', 'gyro_z', 
               'mag_x', 'mag_y', 'mag_z']
 
+plt.rcParams.update({'font.size': 20})  
 
 # 2×2グリッドでサブプロット作成
 fig, axes = plt.subplots(2, 2, figsize=(15, 10))
